@@ -12,7 +12,42 @@
 
 // //Write your code below this line:
 
+function genBuzz(lower,higher){
+    if(typeof lower === 'number' && typeof higher === 'number'){
+        if(lower >= higher){
+            console.log(`${lower} is higher than ${higher}`)
+        }
 
+        else{
+            for(let i = lower; i <= higher; i++){
+                if(i % 3 === 0 && i % 5 === 0){
+                    console.log('GenBuzz')
+                }else if(i % 3 === 0){
+                    console.log('Gen');
+                }else if(i % 5 === 0){
+                    console.log('Buzz')
+        }
+        
+        else{
+            console.log(i)
+        }
+          
+        }
+      }
+    }else if(typeof lower === 'number' && typeof higher !== 'number'){
+      console.log(`${higher} is not a valid higher limit, please enter a number`)
+    }else if(typeof higher === 'number' && typeof lower !== 'number'){
+      console.log(`${lower} is not a valid lower limit, please enter a number`)
+    }
+  
+  
+    else{
+      console.log('Please enter numbers as input');
+    }
+  }
+  
+  
+  console.log(genBuzz(21,17));
 
 
 // 2. Leap Year
@@ -35,7 +70,24 @@
 
 //Write your code below this line:
 
-
+function isLeapYear(year){
+    if (year % 4 === 0){
+      if(year % 100 === 0){
+        if(year % 400 === 0){
+          console.log("Leap Year");
+        }else{
+          console.log("Not Leap Year")
+        }
+      }else{
+        console.log("Leap Year")
+      }
+    }else{
+      console.log('Not a Leap Year')
+    }
+  }
+  
+  
+  console.log(isLeapYear(1700));
 
 
 
@@ -53,3 +105,22 @@
 // You may not use the built-in Math.sqrt method
 
 //Write your code below this line:
+
+function isPerfectSquare(number) {
+    let arrayOfNumbers = []
+    for (let i = 1; i < number; i++){
+      arrayOfNumbers.push(i)
+    };
+  
+  
+    for (let i = 0; i < arrayOfNumbers.length; i++){
+      for (let j = 0; j < arrayOfNumbers.length; j++){
+        if((arrayOfNumbers[i] * arrayOfNumbers[j] === number) &(arrayOfNumbers[i] === arrayOfNumbers[j]) ){
+          return 'Perfect Square';
+        }
+      }
+    }
+    return 'Not a Perfect Square';
+  }
+  
+  console.log(isPerfectSquare(7));
